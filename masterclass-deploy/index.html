@@ -28,7 +28,7 @@ body::before{content:'';position:fixed;inset:0;background-image:url("data:image/
 .logo-label{font-family:var(--mono);font-size:9px;letter-spacing:3px;color:var(--amber);text-transform:uppercase;margin-bottom:4px}
 .logo-title{font-family:var(--display);font-size:20px;letter-spacing:1px;line-height:1;color:var(--text)}
 .nav-part{padding:14px 24px 6px;font-family:var(--mono);font-size:9px;letter-spacing:3px;color:var(--amber);text-transform:uppercase;margin-top:4px;display:flex;align-items:center;gap:8px}
-.nav-part::after{content:'';flex:1;height:1px;background:var(--amber);opacity:0.3}
+.nav-part::after{content:'';flex:1;height:1px;background:currentColor;opacity:0.3}
 .nav-cat{padding:10px 24px 3px;font-family:var(--mono);font-size:8px;letter-spacing:2px;color:var(--dim);text-transform:uppercase}
 .nav-link{display:block;padding:5px 24px 5px 28px;color:var(--muted);text-decoration:none;font-size:12px;font-weight:400;transition:all .15s;border-left:2px solid transparent;line-height:1.4}
 .nav-link:hover,.nav-link.active{color:var(--text);border-left-color:var(--amber);background:var(--amber-glow);padding-left:32px}
@@ -52,6 +52,7 @@ body::before{content:'';position:fixed;inset:0;background-image:url("data:image/
 .badge{font-family:var(--mono);font-size:10px;letter-spacing:2px;text-transform:uppercase;padding:6px 14px;border-radius:4px;border:1px solid}
 .badge-1{color:var(--amber);border-color:rgba(245,158,11,.3);background:rgba(245,158,11,.07)}
 .badge-2{color:var(--cyan);border-color:rgba(34,211,238,.3);background:rgba(34,211,238,.07)}
+.badge-3{color:var(--red);border-color:rgba(248,113,113,.3);background:rgba(248,113,113,.07)}
 
 /* SECTION */
 section{padding:68px 80px;border-bottom:1px solid var(--border);position:relative}
@@ -277,7 +278,7 @@ strong{color:var(--text);font-weight:500}
   <a href="#team" class="nav-link">15 — Team Adoption</a>
   <a href="#current" class="nav-link">16 — Staying Current</a>
 
-  <div class="nav-part">Part II</div>
+  <div class="nav-part" style="color:var(--cyan)">Part II</div>
   <div class="nav-cat">Integration Foundations</div>
   <a href="#p2-landscape" class="nav-link">17 — AI Integration Landscape</a>
   <a href="#p2-apis" class="nav-link">18 — AI APIs & Providers</a>
@@ -325,20 +326,21 @@ strong{color:var(--text);font-weight:500}
   <h1>THE <em>10×</em><br>ENGINEER</h1>
   <p class="hero-sub">Everything a software engineer needs to leverage AI — from coding assistants and autonomous agents to integrating AI into your products, fine-tuning models, and running your own inference. Walk in a developer. Walk out a one-person engineering team.</p>
   <div class="hero-meta">
-    <div class="stat"><div class="stat-n">30</div><div class="stat-l">Modules</div></div>
+    <div class="stat"><div class="stat-n">43</div><div class="stat-l">Modules</div></div>
     <div class="stat"><div class="stat-n">60+</div><div class="stat-l">Tools</div></div>
-    <div class="stat"><div class="stat-n">30</div><div class="stat-l">Homework Labs</div></div>
+    <div class="stat"><div class="stat-n">43</div><div class="stat-l">Homework Labs</div></div>
     <div class="stat"><div class="stat-n">∞</div><div class="stat-l">Leverage</div></div>
   </div>
   <div class="part-badges">
     <div class="badge badge-1">Part I — AI as Your Coding Copilot</div>
     <div class="badge badge-2">Part II — Integrating AI Into Your Apps</div>
+    <div class="badge badge-3">Part III — Hacking AI & Defending It</div>
   </div>
 </div>
 
 <!-- ════════════════════════════ PART I HEADER ════════════════════════════ -->
 <div class="part-header" id="part1">
-  <div class="part-badge">Part I of II</div>
+  <div class="part-badge">Part I of III</div>
   <h2>AI AS YOUR<br><em>CODING COPILOT</em></h2>
   <p>Modules 01–16. How to use AI tools to write code faster, automate your workflow, manage side projects autonomously, and operate like a team of engineers by yourself.</p>
 </div>
@@ -1482,7 +1484,7 @@ Generate a comprehensive test suite for this module.
 
 <!-- ════════════════════════════ PART II HEADER ════════════════════════════ -->
 <div class="part-header" id="part2">
-  <div class="part-badge">Part II of II</div>
+  <div class="part-badge">Part II of III</div>
   <h2>INTEGRATING AI<br><em>INTO YOUR APPS</em></h2>
   <p>Modules 17–30. How to add AI capabilities directly to the products you build — API integration, cost strategy, streaming, RAG, embeddings, fine-tuning, training custom models, self-hosted inference, and running AI in production.</p>
 </div>
@@ -2718,17 +2720,6 @@ curl -fsSL https://ollama.ai/install.sh | sh
 
 </div>
 
-<script>
-const sections = document.querySelectorAll('section[id], div[id]');
-const navLinks = document.querySelectorAll('.nav-link');
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      const id = entry.target.getAttribute('id');
-      navLinks.forEach(link => {
-        link.classList.remove('active');
-        if (link.getAttribute('href') === '#' + id) link.classList.add('active');
-      });
 <!-- ═══════════════════════ PART III HEADER ═══════════════════════ -->
 <div class="part-header" id="part3" style="border-top:1px solid var(--border);background:linear-gradient(135deg,#0a0606 0%,var(--surface) 100%)">
   <div class="part-badge" style="color:var(--red);--tw-border-opacity:1">
